@@ -1,10 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('sonarqube') {
+    stage('deploy') {
       steps {
-        sh '''cd /var/lib/jenkins/plugins/sonar/META-INF/maven/org.jenkins-ci.plugins/sonar
-mvn sonar:sonar -Dsonar.host.url=http://172.30.219.110:9000 -Dlicense.skip=true'''
+        sh '''cd /var/lib/jenkins/workspace/hello_master/
+chmod 777 bash.sh
+./bash.sh'''
       }
     }
   }
