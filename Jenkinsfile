@@ -4,7 +4,7 @@ pipeline {
     stage('deploy') {
       steps {
         sh '''cd /var/lib/jenkins/workspace/hello_master/
-chmod 777 bash.sh
+sudo chmod 777 bash.sh
 ./bash.sh'''
       }
     }
